@@ -1,13 +1,101 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.App{
+  position: relative;
+  width: 1440px;
+  height: 2055px;
+
+  background: #FFFFFF;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.top {
+  width: 1440px;
+  height: 80px;
+  left: 0px;
+  top: 0px;
+  background: #FFFFFF;
+
+}
+
+.logo {
+  position: absolute;
+  width: 38.77px;
+  height: 36px;
+  left: 42px;
+  top: 22px;
+
+  background: url('./assets/icons/aerolab-logo.svg')
+}
+
+.profile{
+  position: absolute;
+  width: 215px;
+  height: 48px;
+  left: 1183px;
+  top: 16px;
+}
+
+.namexUser {
+  position: absolute;
+  height: 48px;
+  left: 0%;
+  right: 57%;
+  top: calc(80% - 48px/2);
+
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 100%;
+  /* identical to box height, or 200% */
+
+  letter-spacing: -0.15px;
+
+  color: #616161;
+}
+
+.points {
+  position: absolute;
+  left: 47%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+}
+
+.rectangle{
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+
+  background: #EDEDED;
+  border-radius: 20.5px;
+}
+
+.money{
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  left: 67px;
+  top: 12px;
+  background: url('./assets/icons/coin.svg');
+  background-color: #EDEDED;
+}
+
+.number{
+  position: absolute;
+  height: 48px;
+  left: 12.62%;
+  right: 40.78%;
+  top: calc(50% - 48px/2);
+
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 48px;
+  /* identical to box height, or 200% */
+
+  letter-spacing: -0.15px;
+
+  color: #616161;
 }
