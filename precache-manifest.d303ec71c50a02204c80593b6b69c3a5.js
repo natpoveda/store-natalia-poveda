@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1f339a1af2d2d34ddfde3ffdab61a7ce",
+    "revision": "928f37400cdd2fd0aa7164d51e0d1795",
     "url": "/store-natalia-poveda/index.html"
   },
   {
-    "revision": "fdc64ddf1ae41815acc2",
+    "revision": "e1254fea2808fa77709a",
     "url": "/store-natalia-poveda/static/css/main.6b7152e6.chunk.css"
   },
   {
-    "revision": "76ac98594f283aa19bba",
-    "url": "/store-natalia-poveda/static/js/2.8a94a082.chunk.js"
+    "revision": "fd06850f595694816489",
+    "url": "/store-natalia-poveda/static/js/2.1e84b526.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/store-natalia-poveda/static/js/2.8a94a082.chunk.js.LICENSE.txt"
+    "url": "/store-natalia-poveda/static/js/2.1e84b526.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fdc64ddf1ae41815acc2",
-    "url": "/store-natalia-poveda/static/js/main.a420c663.chunk.js"
+    "revision": "e1254fea2808fa77709a",
+    "url": "/store-natalia-poveda/static/js/main.c3cff793.chunk.js"
   },
   {
     "revision": "1d95d1da88a3a049cd29",
