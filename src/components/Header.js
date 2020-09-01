@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import HeaderProvider from '../contexts/contextProviderHeader';
 import {HeaderContext} from '../contexts/contextProviderHeader';
+import headphones from '../assets/icons/header.png';
 
 const Header = () => {
 
@@ -16,6 +17,7 @@ const Header = () => {
     console.log("userHeaderHeaders", user);
     
     return (
+        <>
         <div className="top box">
             
             <div className="logo"></div>
@@ -35,7 +37,10 @@ const Header = () => {
 
             </div>
         </div>
-        
+        <div className="header">
+            <img src={headphones}></img>
+        </div>
+       </> 
     );
 }
 

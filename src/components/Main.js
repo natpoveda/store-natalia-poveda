@@ -1,25 +1,25 @@
 import React from 'react';
 import {HashRouter, Route, Switch} from 'react-router-dom';
 import User from './User';
+import Home from './Home';
 
 
 const Main = () =>{
     return (
         <main className="main">
-        <HashRouter>
-        <Switch>
-        <Route
-          exact
-          path="/store-natalia-poveda"
-          render={({ match }) => {
-            return <div>Home</div>;
-          }}
-        />
-        <Route
-          path="/store-natalia-poveda/posts"
-          component={User}
-        />
-        </Switch>
+        <HashRouter basename="/store-natalia-poveda">
+            <Switch>
+            <Route
+            path="/"
+            component={Home}
+            exact
+            />
+            <Route
+            path="/posts"
+            component={User}
+            exact
+            />
+            </Switch>
         </HashRouter>    
         
         </main>

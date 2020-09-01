@@ -1,18 +1,19 @@
-.App{
-  position: relative;
-  width: 1440px;
-  height: 2055px;
+body {
+  background:#F2F2F2;
+}
 
-  background: #FFFFFF;
+.App {
+  position: relative;
+  width: 100%;
+  height: 2055px;
 }
 
 .top {
-  width: 1440px;
+  width: 100%;
   height: 80px;
   left: 0px;
   top: 0px;
-  background: #FFFFFF;
-
+  background: #ffffff;
 }
 
 .logo {
@@ -22,10 +23,10 @@
   left: 42px;
   top: 22px;
 
-  background: url('./assets/icons/aerolab-logo.svg')
+  background: url("./assets/icons/aerolab-logo.svg");
 }
 
-.profile{
+.profile {
   position: absolute;
   width: 215px;
   height: 48px;
@@ -38,7 +39,7 @@
   height: 48px;
   left: 0%;
   right: 57%;
-  top: calc(80% - 48px/2);
+  top: calc(80% - 48px / 2);
 
   font-family: Source Sans Pro;
   font-style: normal;
@@ -60,33 +61,33 @@
   bottom: 0%;
 }
 
-.rectangle{
+.rectangle {
   position: absolute;
   left: 0%;
   right: 0%;
   top: 0%;
   bottom: 0%;
 
-  background: #EDEDED;
+  background: #ededed;
   border-radius: 20.5px;
 }
 
-.money{
+.money {
   position: absolute;
-  width: 28px;
-  height: 28px;
-  left: 67px;
-  top: 12px;
-  background: url('./assets/icons/coin.svg');
-  background-color: #EDEDED;
+  width: 30px;
+  height: 30px;
+  left: 76px;
+  top: 8px;
+  background: url("./assets/icons/coin.svg");
+  background-color: #ededed;
 }
 
-.number{
+.number {
   position: absolute;
   height: 48px;
   left: 12.62%;
   right: 40.78%;
-  top: calc(50% - 48px/2);
+  top: calc(50% - 48px / 2);
 
   font-family: Source Sans Pro;
   font-style: normal;
@@ -98,4 +99,95 @@
   letter-spacing: -0.15px;
 
   color: #616161;
+}
+
+.header img {
+  width: 100%;
+}
+
+.white{
+  display: flex;
+  justify-content: center;
+}
+
+.container{
+  background:#F2F2F2;
+}
+
+.products {
+  position: absolute;
+  width: 1176px;
+  left: 132px;
+  top: 660px;
+  display: flex;
+  flex-wrap: wrap;
+ 
+}
+
+.product-card{
+  width: 23%;
+  height: 276px;
+  left: 132px;
+  top: 672px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: #FFFFFF;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 5px 10px 10px 10px;
+}
+
+.photo {
+  height: 182px;
+}
+
+
+.photo img {
+  width: 175px;
+  height: 142px;
+  left: 183px;
+  top: 713px;
+}
+
+.info {
+  height: 64px;
+  left: 156px;
+  top: 866px;
+}
+
+.category{
+  height: 20px;
+  left: 0%;
+  right: 78.07%;
+  top: calc(50% - 20px/2 - 2px);
+
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.0376471px;
+
+  color: #A3A3A3;
+}
+
+.name-product{
+  
+height: 23px;
+left: 0%;
+right: 71.05%;
+top: calc(50% - 23px/2 + 20.5px);
+
+font-family: Source Sans Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 23px;
+/* identical to box height */
+
+letter-spacing: -0.0423529px;
+
+color: #616161;
+
 }

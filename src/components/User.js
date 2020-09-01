@@ -1,6 +1,7 @@
 import React, { useState, useContext, useReducer } from "react";
 import { HeaderContext } from "../contexts/contextProviderHeader";
 import reducer from "../reducers/userReducer";
+import RedemItem from "./RedemItem";
 
 const User = () => {
   const { user, setUser } = useContext(HeaderContext);
@@ -17,11 +18,15 @@ const User = () => {
   const [state, dispatch] = useReducer(reducer, estadoForm);
   const {m1000,m5000,m7500,disabled} = state;
 
+ let mm2 = null;
+
  if (user != null){
      let mm = user.redeemHistory;
-     console.log("MM",mm.slice(0, 10));
+     mm2 = mm.slice(300, 320);
+     console.log("MM",mm.slice(400, 420));
  }
-  
+ 
+
   return (
     <div>
       <div className="container centered">
@@ -61,8 +66,19 @@ const User = () => {
             </button>
           </form>
 
-           <div className="history">
-
+           <div className="history products">
+                {(mm2 ? mm2.map((item) => {
+                    return (
+                        <RedemItem
+                        urlImages={item.img.url}
+                        category={item.category}
+                        name= {item.name}
+                        date= {item.createDate}
+                        cost = {item.cost}
+                        />
+                    )
+                    
+                }) : console.log("Llego null"))}
             </div> 
 
         </div>
