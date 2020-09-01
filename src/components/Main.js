@@ -9,13 +9,13 @@ const Main = () =>{
         <Switch>
         <Route
           exact
-          path="/"
+          path="/store-natalia-poveda"
           render={({ match }) => {
             return <div>Home</div>;
           }}
         />
         <Route
-          path="/posts"
+          path="/store-natalia-poveda/posts"
           component={User}
         />
         </Switch>
