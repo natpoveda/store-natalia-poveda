@@ -11,8 +11,9 @@ const headers = {
 
 export default function HeaderProvider({children}){
     const [user, setUser] = useState(null);
-
+    let user_response= null;
     console.log("headers",headers);
+    
     useEffect(() => {
      fetch("https://coding-challenge-api.aerolab.co/user/me",{
         method: "GET",
@@ -53,8 +54,8 @@ export default function HeaderProvider({children}){
         } catch (err) {
             console.log("Error ==> ", err)
         }
-    }       
-    */ 
+    } */      
+    
     return (
         <HeaderContext.Provider value={{user,setUser}}>
             {children}

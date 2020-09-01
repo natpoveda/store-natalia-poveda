@@ -1,11 +1,12 @@
 import React from 'react';
-import {Route, Switch} from 'react-router-dom';
+import {HashRouter, Route, Switch} from 'react-router-dom';
 import User from './User';
 
 
 const Main = () =>{
     return (
         <main className="main">
+        <HashRouter>
         <Switch>
         <Route
           exact
@@ -19,6 +20,8 @@ const Main = () =>{
           component={User}
         />
         </Switch>
+        </HashRouter>    
+        
         </main>
     );
 }
