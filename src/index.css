@@ -114,14 +114,21 @@ body {
   background:#F2F2F2;
 }
 
+.custom-form{
+  height: 2rem;
+}
+
 .products {
   position: absolute;
-  width: 1176px;
+  width: 85%;
   left: 132px;
   top: 660px;
+}
+
+.containerCards{
+  background:#F2F2F2;
   display: flex;
   flex-wrap: wrap;
- 
 }
 
 .product-card{

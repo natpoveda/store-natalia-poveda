@@ -28,33 +28,8 @@ export default function HeaderProvider({children}){
     })
     .then((response) => response.json())
     .then((user)=>setUser(user));
-     },[]);
-
-
-    /*
-    useEffect(() => {
-        // Create an scoped async function in the hook
-        async function getPromise() {
-            user_response = await getUser();
-            console.log("UR",user_response);
-            setUser(user_response);
-        }
-        // Execute the created function directly
-        getPromise();
-    }, []);
-
-     async function getUser(){
-        try {
-            let response = await  fetch("https://coding-challenge-api.aerolab.co/user/me",{
-                method: "GET",
-                headers
-              })
-            let json = await response.json()
-            return json;
-        } catch (err) {
-            console.log("Error ==> ", err)
-        }
-    } */      
+    },[]);
+ 
     
     return (
         <HeaderContext.Provider value={{user,setUser}}>

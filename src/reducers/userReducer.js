@@ -1,16 +1,27 @@
-function reducer(state, action) {
+import {useCallback, useContext} from 'react';
+import { HeaderContext } from "../contexts/contextProviderHeader";
+
+
+
+const reducer = (state, action) =>{
+    
+   console.log("StateReducer",state);
+   console.log("ActionReducer",action);
   let sForm = null;
   const { m1000, m5000, m7500 } = state;  
+  let points= action.points;
+
   if (action.type === "eventChange") {
+
     switch (action.id) {
       case "m1000":
-        sForm = { m1000: true, m5000: false, m7500: false, disabled: false };
+        sForm = { m1000: true, m5000: false, m7500: false, disabled: false, points };
         break;
       case "m5000":
-        sForm = { m1000: false, m5000: true, m7500: false, disabled: false };
+        sForm = { m1000: false, m5000: true, m7500: false, disabled: false, points };
         break;
       case "m7500":
-        sForm = { m1000: false, m5000: false, m7500: true, disabled: false };
+        sForm = { m1000: false, m5000: false, m7500: true, disabled: false, points };
         break;
     }
 
@@ -29,10 +40,22 @@ function reducer(state, action) {
       amount = 7500;
     }
 
-    getPromise(amount);
+    (
+      async ()=>{
+        let abc = await getPromise(amount);
+        if (abc.message ==="Points Updated") {
+           points = abc['New Points'];
+        }
 
-    return { m1000: false, m5000: false, m7500: false, disabled: true };
+        console.log("ABC", abc);
+        console.log("PointsABC",points);
+      }
+    )()
+    
+
+    return { m1000: false, m5000: false, m7500: false, disabled: true, points };
   }
+
 }
 
 async function addPoint(amount) {
@@ -64,6 +87,10 @@ async function addPoint(amount) {
 async function getPromise(amount) {
   let user_response = null;
   user_response = await addPoint(amount);
+  
+  return user_response;
+
 }
+
 
 export default reducer;
