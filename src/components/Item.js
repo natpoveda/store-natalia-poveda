@@ -1,11 +1,8 @@
 import React, { useState, useContext, useReducer } from "react";
 
 
-const RedemItem = ({urlImages,category,name,cost}) =>{
+const Item = ({urlImages,category,name,cost}) =>{
 
-    console.log("Props",urlImages);
-
-    console.log("Image", urlImages.naturalWidth);
     return (
     <div className="product-card">
         <div className="photo line">
@@ -19,4 +16,4 @@ const RedemItem = ({urlImages,category,name,cost}) =>{
     );
 }
 
-export default RedemItem;
+export default Item;

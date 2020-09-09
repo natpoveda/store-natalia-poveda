@@ -5,8 +5,6 @@ import { HeaderContext } from "../contexts/contextProviderHeader";
 
 const reducer = (state, action) =>{
     
-   console.log("StateReducer",state);
-   console.log("ActionReducer",action);
   let sForm = null;
   const { m1000, m5000, m7500 } = state;  
   let points= action.points;
@@ -40,20 +38,19 @@ const reducer = (state, action) =>{
       amount = 7500;
     }
 
+    const totalPoints = points + amount;
+    const newState = { m1000: false, m5000: false, m7500: false, disabled: true, points:totalPoints };
     (
       async ()=>{
         let abc = await getPromise(amount);
-        if (abc.message ==="Points Updated") {
+        /*if (abc.message ==="Points Updated") {
            points = abc['New Points'];
-        }
-
-        console.log("ABC", abc);
-        console.log("PointsABC",points);
+        }*/
       }
     )()
     
 
-    return { m1000: false, m5000: false, m7500: false, disabled: true, points };
+    return newState;
   }
 
 }

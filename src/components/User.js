@@ -1,7 +1,7 @@
-import React, { useState, useContext, useReducer, useCallback } from "react";
+import React, { useState, useContext, useReducer, useCallback, useEffect } from "react";
 import { HeaderContext } from "../contexts/contextProviderHeader";
 import reducer from "../reducers/userReducer";
-import RedemItem from "./RedemItem";
+import Item from "./Item";
 import { Box, List, Tag, ListItem, Divider } from "@chakra-ui/core";
 import { Pagination } from "@material-ui/lab";
 import usePagination from "./Pagination";
@@ -24,11 +24,11 @@ const User = () => {
     points,
   };
 
-  console.log("estadoForm", estadoForm);
+  
   const reducerMemo = useCallback(reducer, []);
   const [state, dispatch] = useReducer(reducerMemo, estadoForm);
   let [page, setPage] = useState(1);
-  console.log("StateUser", state);
+
   const { m1000, m5000, m7500, disabled } = state;
 
   let redeem = null;
@@ -37,17 +37,22 @@ const User = () => {
   const PER_PAGE = 24;
 
  if (user != null){
-   console.log("Useruser",user);
-     redeem = user.redeemHistory;
-     console.log("Redeem",redeem);
-     count = Math.ceil(redeem.length / PER_PAGE);
-     
+    redeem = user.redeemHistory;
+    count = Math.ceil(redeem.length / PER_PAGE);   
  }
- console.log("RedeemFuera",redeem);
+
+ const toggle =() => {
+  setUser({ ...user, points: state.points });
+ };
+
+useEffect(() => {
+  if (user != null) {
+    toggle();
+  }
+ },[state]);
+
  _DATA = usePagination(redeem, PER_PAGE);
  
- console.log("_DATA",_DATA);
-
   const handleChange = (e, p) => {
     setPage(p);
     _DATA.jump(p);
@@ -104,9 +109,9 @@ const User = () => {
 
             <div className="containerCards">
               {_DATA.currentData().map((item) => {
-                console.log("Item",item);
+            
                       return (
-                          <RedemItem
+                          <Item
                           urlImages={item.img.url}
                           category={item.category}
                           name= {item.name}
