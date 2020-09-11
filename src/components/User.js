@@ -34,7 +34,7 @@ const User = () => {
   let redeem = null;
   let count = 0;
   let _DATA = null;
-  const PER_PAGE = 24;
+  const PER_PAGE = 16;
 
  if (user != null){
     redeem = user.redeemHistory;
