@@ -14,6 +14,7 @@ const Home = () => {
     let [page, setPage] = useState(1);
 
     let count = 0;
+    let points = 0;
     let _DATA = null;
     const PER_PAGE = 16;
 
@@ -21,6 +22,9 @@ const Home = () => {
         count = Math.ceil(products.length / PER_PAGE);   
     }
 
+    if (user != null){
+        points = user.points;
+    }
     _DATA = usePagination(products, PER_PAGE);
  
     const handleChange = (e, p) => {
@@ -28,6 +32,8 @@ const Home = () => {
         _DATA.jump(p);
     };
     console.log("Products", products);
+    console.log("User", user);
+
     return ( 
         <div className="history products">
             {
@@ -43,6 +49,7 @@ const Home = () => {
                           name= {item.name}
                           date= {item.createDate}
                           cost = {item.cost}
+                          points = {points}
                           />
                       )
                       
