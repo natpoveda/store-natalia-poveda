@@ -328,3 +328,65 @@ body {
   background: url("./assets/icons/coin.svg");
   background-color: white;
 }
+
+.fondo_transparente{
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.226);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.active{
+  display: block;
+}
+
+.no-active{
+  display: none;
+}
+
+.modal{
+  background: linear-gradient(0deg,white 70%, crimson 30%);
+  width: 600px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 30px;
+
+}
+
+.interna{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  padding: 15px;
+}
+
+
+.wrong{
+  background-color: #fff78e;
+  color: #3ab46d;
+}
+
+.success{
+  background-color: #ebebeb;
+  color: crimson;
+}
+
+.modal button{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.5em;
+    border-radius: 100px;
+    background:white;
+}

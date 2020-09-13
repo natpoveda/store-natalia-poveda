@@ -27,7 +27,7 @@ export default function ProductsProvider({children}){
         (
             async()=>{
                 setProducts(await metodo('https://coding-challenge-api.aerolab.co/products'));
-                setModal({active:0, type:"success"});
+                setModal({active:0, type:"wrong"});
             }
         )()
     },[])

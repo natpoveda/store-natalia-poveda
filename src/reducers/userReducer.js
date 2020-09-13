@@ -35,13 +35,14 @@ const reducer = (state, action) =>{
     }
 
     const totalPoints = points + amount;
-    const newState = { m1000: false, m5000: false, m7500: false, disabled: true, points:totalPoints };
+    let newState = { m1000: false, m5000: false, m7500: false, disabled: true, points:totalPoints };
     (
       async ()=>{
-        let abc = await getPromise(amount);
-        /*if (abc.message ==="Points Updated") {
-           points = abc['New Points'];
-        }*/
+        let aAmount = await getPromise(amount);
+        if (aAmount.message ==="Points Updated") {
+           points = aAmount['New Points'];
+           newState = { m1000: false, m5000: false, m7500: false, disabled: true, points };
+        }
       }
     )()
     

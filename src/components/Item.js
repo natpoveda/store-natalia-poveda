@@ -8,20 +8,19 @@ const Item = ({ urlImages, category, name, cost, points, redeem, id }) => {
   console.log("Redeem", redeem);
   const { modal, setModal} = useContext(ProductsContext);  
   const { user, setUser } = useContext(HeaderContext);
-  console.log("modal",modal);
-
+  
   const estadoItems = {
     cost,
     points,
     active: 0,
     type: "wrong"
   }
+
   const reducerMemo = useCallback(producsreducer, []);
   const [state, dispatch] = useReducer(reducerMemo, estadoItems);
   
   const toggle =() => {
     if (state != null){
-        console.log("entro a state");
         setModal({active:state.active, type: state.type}); 
         setUser({ ...user, points: state.points });   
     }  
@@ -31,7 +30,6 @@ const Item = ({ urlImages, category, name, cost, points, redeem, id }) => {
       toggle();
    },[state]);
   
-   console.log("STATEITEM3",user);
 
   return (
     <div className="product-card">

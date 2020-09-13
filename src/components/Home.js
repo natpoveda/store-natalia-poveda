@@ -1,19 +1,19 @@
-import React, { useState, useContext, useReducer } from "react";
+import React, { useState, useContext, useReducer,useEffect } from "react";
 import { HeaderContext } from "../contexts/contextProviderHeader";
 import { ProductsContext } from "../contexts/contextProviderProducts";
-import reducer from "../reducers/userReducer";
 import Item from "./Item";
-import { Box, List, Tag, ListItem, Divider } from "@chakra-ui/core";
+import { Box } from "@chakra-ui/core";
 import { Pagination } from "@material-ui/lab";
 import usePagination from "./Pagination";
+import Modal from './Modal';
+import Filters from  './Filters';
+import producsreducer from "../reducers/productsReducer";
 
 
 const Home = () => {
     const { user, setUser } = useContext(HeaderContext);
     const { products, setProducts} = useContext(ProductsContext);
-    const { modal, setModal} = useContext(ProductsContext);
    
-   console.log("MODAL",modal);
     let [page, setPage] = useState(1);
     let count = 0;
     let points = 0;
@@ -21,6 +21,7 @@ const Home = () => {
     const PER_PAGE = 16;
 
     if (products != null){
+        console.log("productsHome",products);
         count = Math.ceil(products.length / PER_PAGE);   
     }
 
@@ -33,11 +34,34 @@ const Home = () => {
         setPage(p);
         _DATA.jump(p);
     };
-    console.log("Products", products);
-    console.log("User", user);
-
+  
+    const estadoItems = { changed: 0, products};
+    const [state, dispatch] = useReducer(producsreducer, estadoItems);
+   
+     const toggle =() => {
+       if (state != null){
+           setProducts(state.products); 
+       }  
+      };
+     
+     useEffect(() => {
+         toggle();
+     },[state]);
+    
     return ( 
         <div className="history products">
+            <div className="white-form">
+                <form className="custom-form">
+                <button
+                    className="btn active"
+                    onClick={() => dispatch({ type: "orderByCost", products})}
+                >
+                    By Cost
+                </button>
+                </form>
+            </div>
+
+            
             {
             <Box p="5">
 
@@ -70,6 +94,9 @@ const Home = () => {
             />  
             </Box>  
               }
+
+           <Modal />
+             
          </div>
         
     );
