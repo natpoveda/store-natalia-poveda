@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.css": "/store-natalia-poveda/static/css/main.6b7152e6.chunk.css",
-    "main.js": "/store-natalia-poveda/static/js/main.c3cff793.chunk.js",
-    "main.js.map": "/store-natalia-poveda/static/js/main.c3cff793.chunk.js.map",
+    "main.css": "/store-natalia-poveda/static/css/main.da85e376.chunk.css",
+    "main.js": "/store-natalia-poveda/static/js/main.49685d91.chunk.js",
+    "main.js.map": "/store-natalia-poveda/static/js/main.49685d91.chunk.js.map",
     "runtime-main.js": "/store-natalia-poveda/static/js/runtime-main.3e3d5f10.js",
     "runtime-main.js.map": "/store-natalia-poveda/static/js/runtime-main.3e3d5f10.js.map",
-    "static/js/2.1e84b526.chunk.js": "/store-natalia-poveda/static/js/2.1e84b526.chunk.js",
-    "static/js/2.1e84b526.chunk.js.map": "/store-natalia-poveda/static/js/2.1e84b526.chunk.js.map",
+    "static/js/2.a27ad06d.chunk.js": "/store-natalia-poveda/static/js/2.a27ad06d.chunk.js",
+    "static/js/2.a27ad06d.chunk.js.map": "/store-natalia-poveda/static/js/2.a27ad06d.chunk.js.map",
     "index.html": "/store-natalia-poveda/index.html",
-    "precache-manifest.d303ec71c50a02204c80593b6b69c3a5.js": "/store-natalia-poveda/precache-manifest.d303ec71c50a02204c80593b6b69c3a5.js",
+    "precache-manifest.db4a350be572e11eb3113fc8fce6a2ee.js": "/store-natalia-poveda/precache-manifest.db4a350be572e11eb3113fc8fce6a2ee.js",
     "service-worker.js": "/store-natalia-poveda/service-worker.js",
-    "static/css/main.6b7152e6.chunk.css.map": "/store-natalia-poveda/static/css/main.6b7152e6.chunk.css.map",
-    "static/js/2.1e84b526.chunk.js.LICENSE.txt": "/store-natalia-poveda/static/js/2.1e84b526.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/store-natalia-poveda/static/media/coin.4669120c.svg"
+    "static/css/main.da85e376.chunk.css.map": "/store-natalia-poveda/static/css/main.da85e376.chunk.css.map",
+    "static/js/2.a27ad06d.chunk.js.LICENSE.txt": "/store-natalia-poveda/static/js/2.a27ad06d.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/store-natalia-poveda/static/media/coin.4669120c.svg",
+    "static/media/header.png": "/store-natalia-poveda/static/media/header.68402e78.png",
+    "static/media/orange1.gif": "/store-natalia-poveda/static/media/orange1.f227d745.gif",
+    "static/media/orange2.gif": "/store-natalia-poveda/static/media/orange2.7a1d4b8f.gif"
   },
   "entrypoints": [
     "static/js/runtime-main.3e3d5f10.js",
-    "static/js/2.1e84b526.chunk.js",
-    "static/css/main.6b7152e6.chunk.css",
-    "static/js/main.c3cff793.chunk.js"
+    "static/js/2.a27ad06d.chunk.js",
+    "static/css/main.da85e376.chunk.css",
+    "static/js/main.49685d91.chunk.js"
   ]
 }
