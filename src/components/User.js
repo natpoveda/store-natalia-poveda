@@ -62,6 +62,7 @@ useEffect(() => {
     <div>
       <div className="container centered">
         <div className="white ">
+          <div className="white-form">
           <form className="custom-form">
             <span>1000 Points</span>
             <input
@@ -96,12 +97,13 @@ useEffect(() => {
 
             <button
               disabled={disabled}
-              className={`btn ${disabled ? "disabled" : ""}`}
+              className={`btn ${disabled ? "disabled" : "active"}`}
               onClick={() => dispatch({ type: "handleChangePoints", points })}
             >
               Add Points
             </button>
           </form>
+        </div>
 
           <div className="history products">
             {
@@ -117,6 +119,7 @@ useEffect(() => {
                           name= {item.name}
                           date= {item.createDate}
                           cost = {item.cost}
+                          redeem = {false}
                           />
                       )
                       

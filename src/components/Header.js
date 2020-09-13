@@ -14,7 +14,6 @@ const Header = () => {
       name = user.name;
       points = user.points;
     }
-    console.log("userHeaderHeaders", user);
     
     return (
         <>

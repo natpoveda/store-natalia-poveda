@@ -11,8 +11,10 @@ import usePagination from "./Pagination";
 const Home = () => {
     const { user, setUser } = useContext(HeaderContext);
     const { products, setProducts} = useContext(ProductsContext);
+    const { modal, setModal} = useContext(ProductsContext);
+   
+   console.log("MODAL",modal);
     let [page, setPage] = useState(1);
-
     let count = 0;
     let points = 0;
     let _DATA = null;
@@ -50,6 +52,8 @@ const Home = () => {
                           date= {item.createDate}
                           cost = {item.cost}
                           points = {points}
+                          redeem = {1}
+                          id = {item._id}
                           />
                       )
                       

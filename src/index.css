@@ -110,19 +110,51 @@ body {
   justify-content: center;
 }
 
+.white-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .container {
   background: #f2f2f2;
 }
 
 .custom-form {
   height: 2rem;
+    border: #0ad4fa;
+    border-style: groove;
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    border-radius: 100px;
+    background:white;
+}
+
+.btn{
+  border-radius: 100px;
+  background: white;
+  border-color: #0ad4fa;
+}
+
+.disabled{
+  color:grey;
+}
+
+.active{
+    color: #0ad4fa;
+}
+
+
+.history {
+  top: 550px;
 }
 
 .products {
   position: absolute;
   width: 85%;
   left: 132px;
-  top: 660px;
 }
 
 .containerCards {
@@ -134,14 +166,13 @@ body {
 .product-card {
   width: 23%;
   height: 282px;
-  left: 132px;
-  top: 672px;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   background: #ffffff;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 2px 4px rgba(0, 0, 0, 0.1);
   margin: 5px 10px 10px 10px;
 }
 
@@ -242,28 +273,58 @@ body {
 }
 
 .overlay{
-  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(238, 238, 238, 0.8);
+  overflow: hidden;
+  width: 1%;
   height: 100%;
   transition: .5s ease;
-  opacity: 1; 
-  top: 50%;
-  left: 50%;
-   transform: translate(-50%, -50%); 
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-  background-color: cyan;
-  position: relative;
-
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .product-card:hover .overlay {
-  opacity: 1;
+  width: 100%;
+  left: 0;
 }
 
+.overlay:hover{
+  background-color:  #33d3f8;
+}
+
+.overlay .infoover{
+  width: 70%;
+  margin-top: 50px;
+}
+
+.overlay .infoover h3{
+  color: white;
+  font-size: 2.5em;
+}
 
 .overlay .text {
-  background-color: #4CAF50;
-  color: white;
+  background-color: white;
+  color:  rgba(98, 98, 99, 0.8);
   font-size: 16px;
-  padding: 16px 32px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border-radius: 100px;
+}
+
+.overlay .text p{
+  width: 60%;
+  float: left;
+}
+
+.overlay .money {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  left: 3px;
+  background: url("./assets/icons/coin.svg");
+  background-color: white;
 }
