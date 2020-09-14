@@ -1,43 +1,41 @@
-import React, { useState, useContext, useReducer,useCallback, useEffect } from "react";
+import React, { useContext, useReducer, useCallback, useEffect } from "react";
 import bagShape from "../assets/icons/bagShape.png";
 import producsreducer from "../reducers/productsReducer";
 import { ProductsContext } from "../contexts/contextProviderProducts";
 import { HeaderContext } from "../contexts/contextProviderHeader";
 
-const Item = ({ urlImages, category, name, cost, points, redeem, id }) => {
-  console.log("Redeem", redeem);
-  const { modal, setModal} = useContext(ProductsContext);  
+const Item = ({ urlImages, category, name, cost, points, redeem, id, key }) => {
+  const { setModal } = useContext(ProductsContext);
   const { user, setUser } = useContext(HeaderContext);
-  
+
   const estadoItems = {
     cost,
     points,
     active: 0,
-    type: "wrong"
-  }
+    type: "wrong",
+  };
 
   const reducerMemo = useCallback(producsreducer, []);
   const [state, dispatch] = useReducer(reducerMemo, estadoItems);
-  
-  const toggle =() => {
-    if (state != null){
-        setModal({active:state.active, type: state.type}); 
-        setUser({ ...user, points: state.points });   
-    }  
-   };
-  
+
+  const toggle = () => {
+    if (state != null) {
+      setModal({ active: state.active, type: state.type });
+      setUser({ ...user, points: state.points });
+    }
+  };
+
   useEffect(() => {
-      toggle();
-   },[state]);
-  
+    toggle();
+  }, [state]);
 
   return (
-    <div className="product-card">
+    <div className="product-card" key={`pc${key}`}>
       {redeem && (
         <div className="IconExchange">
           {cost <= points ? (
             <div className="Icon">
-              <img src={bagShape}></img>
+              <img src={bagShape} alt="bagShape Icon"></img>
             </div>
           ) : (
             <div className="IconYouneed">
@@ -49,7 +47,7 @@ const Item = ({ urlImages, category, name, cost, points, redeem, id }) => {
       )}
 
       <div className="photo line">
-        <img src={urlImages}></img>
+        <img src={urlImages} alt={name}></img>
       </div>
       <div className="info">
         <div className="category">{category}</div>
@@ -63,8 +61,10 @@ const Item = ({ urlImages, category, name, cost, points, redeem, id }) => {
           <div className="infoover">
             <h3>{cost}</h3>
 
-            <div className="text"
-            onClick={() => dispatch({ type: "eventRedeem", points,id })}>
+            <div
+              className="text"
+              onClick={() => dispatch({ type: "eventRedeem", points, id })}
+            >
               <p>Redeem Now</p> <div className="money"></div>{" "}
             </div>
           </div>

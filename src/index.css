@@ -26,6 +26,34 @@ body {
   background: url("./assets/icons/aerolab-logo.svg");
 }
 
+.nav-content{
+  width: 40%;
+  left: 198px;
+  top: 8px;
+  position: absolute;
+}
+
+.tabs{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style-type: none;
+}
+  
+.tab{
+  width: 30%;
+  text-align: center;
+  border-style: double;
+  border-color:beige;
+  height: 31px
+}
+
+.tab a{
+  text-decoration: none;
+  color: orange;
+  font-size: 1.5em;
+}
+
 .profile {
   position: absolute;
   width: 215px;
