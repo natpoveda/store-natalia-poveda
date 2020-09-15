@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/store-natalia-poveda/precache-manifest.b2f77dc8e429b5defdf89067978d1618.js"
+  "/store-natalia-poveda/precache-manifest.ebfc67a12503de03e98d1e37a7b838ea.js"
 );
 
 self.addEventListener('message', (event) => {
