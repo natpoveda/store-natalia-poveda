@@ -52,7 +52,7 @@ const Item = ({ urlImages, category, name, cost, points, redeem, id }) => {
       <div className="info">
         <div className="category">{category}</div>
         <div className="name-product">
-          {name} <span>cost: {cost}</span>
+          {name}
         </div>
       </div>
 
