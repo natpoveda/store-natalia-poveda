@@ -19,18 +19,15 @@ const Home = () => {
   let _DATA = null;
   const PER_PAGE = 16;
 
-  console.log("PRODHOMEALL",products);
-  let prodsShow = products; 
+  let prodsShow = products;
   let [productsHome, setproductsHome] = useState(prodsShow);
-  
+
   useEffect(() => {
-    console.log("PRODHOME22",products);
-    if (products != null){
-        setproductsHome(products);
-    }  
+    if (products != null) {
+      setproductsHome(products);
+    }
   }, [products]);
-  
-  
+
   if (user != null) {
     points = user.points;
   }
@@ -40,8 +37,8 @@ const Home = () => {
 
   const toggle = () => {
     if (state != null) {
-        setproductsHome(state.products);
-        setSelect("All");
+      setproductsHome(state.products);
+      setSelect("All");
     }
   };
 
@@ -50,37 +47,36 @@ const Home = () => {
   }, [state]);
 
   const handleSelect = (e) => {
-    let newProducts = [];  
+    let newProducts = [];
     const valCategory = e.target.value;
     setSelect(valCategory);
-    prodsShow = products; 
+    prodsShow = products;
 
     if (valCategory !== "All") {
-        console.log("No entiendo");
-        prodsShow.filter(function (element) {
-          let name = element.category;
-          const regex = /&/;
-          let nameCategory = name.replace(regex, "Y");
-    
-          if (nameCategory === valCategory) {
-            newProducts.push(element);
-          }
-          return newProducts;         
-        });
+      prodsShow.filter(function (element) {
+        let name = element.category;
+        const regex = /&/;
+        let nameCategory = name.replace(regex, "Y");
+
+        if (nameCategory === valCategory) {
+          newProducts.push(element);
+        }
+        return newProducts;
+      });
     } else {
-        newProducts = prodsShow;
-        setSelect("All");
+      newProducts = prodsShow;
+      setSelect("All");
     }
 
     setproductsHome(newProducts);
   };
 
-  const handleReset = () =>{
+  const handleReset = () => {
     setproductsHome(prodsShow);
     setSelect("All");
-  }
+  };
 
-  if (productsHome != null) {   
+  if (productsHome != null) {
     count = Math.ceil(productsHome.length / PER_PAGE);
   }
 
@@ -91,13 +87,13 @@ const Home = () => {
     _DATA.jump(p);
   };
 
-   return (
+  return (
     <div className="history products">
       <div className="white-form">
         <div className="custom-form">
           <button
             className="btn active"
-            onClick={() => dispatch({ type: "orderByCost", prodsShow:productsHome })}
+            onClick={() => dispatch({ type: "orderByCost", productsHome })}
           >
             By Cost
           </button>
@@ -123,13 +119,9 @@ const Home = () => {
             <option value="Cameras">Cameras</option>
           </select>
 
-          <button
-            className="btn active"
-            onClick={handleReset}
-          >
-           Reset
+          <button className="btn active" onClick={handleReset}>
+            Reset
           </button>
-
         </div>
       </div>
 

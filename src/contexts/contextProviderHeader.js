@@ -22,7 +22,7 @@ export default function HeaderProvider({ children }) {
         if (!response.ok) {
           throw Error(response.statusText);
         }
-        console.log("response", response);
+
         return response;
       })
       .then((response) => response.json())

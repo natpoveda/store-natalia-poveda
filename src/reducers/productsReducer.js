@@ -19,10 +19,9 @@ const producsreducer = (state, action) => {
   }
 
   if (action.type === "orderByCost") {
-    const prodsOrdered = orderProductsByCost(action.prodsShow);
+    const prodsOrdered = orderProductsByCost(action.productsHome);
     return { changed: 1, products: prodsOrdered };
   }
-
 };
 
 async function redeemProduct(productId) {

@@ -4,7 +4,6 @@ import orange1 from "../assets/icons/orange1.gif";
 import orange2 from "../assets/icons/orange2.gif";
 
 const Modal = () => {
-  console.log("Modal");
   const { modal, setModal } = useContext(ProductsContext);
 
   let active = "";
