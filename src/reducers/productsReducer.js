@@ -19,19 +19,10 @@ const producsreducer = (state, action) => {
   }
 
   if (action.type === "orderByCost") {
-    const prodsOrdered = orderProductsByCost(action.products);
-    console.log("PRODsORDerd", prodsOrdered);
+    const prodsOrdered = orderProductsByCost(action.prodsShow);
     return { changed: 1, products: prodsOrdered };
   }
 
-  if (action.type === "orderByCategory") {
-    const prodsOrdered = orderProductsByCategory(
-      action.products,
-      action.valCategory
-    );
-    console.log("PRODsORDerd", prodsOrdered);
-    return { changed: 1, products: prodsOrdered };
-  }
 };
 
 async function redeemProduct(productId) {
@@ -79,61 +70,6 @@ function orderProductsByCost(products) {
   });
 
   return products;
-}
-
-function orderProductsByCategory(products, category) {
-  let newProducts = [];
-  let allProducts = null;
-
-  (async () => {
-    allProducts = await getPromiseAllProducts();
-    console.log("ALLPRODUCTS", allProducts);
-  })();
-
-  if (category !== "All" && allProducts != null) {
-    console.log("No entiendo");
-    let elements = products.filter(function (element) {
-      let name = element.category;
-      const regex = /&/;
-      let nameCategory = name.replace(regex, "Y");
-
-      if (nameCategory === category) {
-        newProducts.push(element);
-      }
-
-      return newProducts;
-    });
-  }
-}
-
-async function getAllProducts() {
-  let s_obj =
-    " eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjQ4MjE0Yjc0MjM1MjAwMWVkOTA5OTIiLCJpYXQiOjE1OTg1NjI2MzV9.2HuMRmZHgJRgUETrIXAli97SnBBy_IU_8fKFT4TmE3Q";
-  const headers = {
-    "Content-Type": "application/json",
-    Authorization: "Bearer" + s_obj,
-  };
-
-  try {
-    let response = await fetch(
-      "https://coding-challenge-api.aerolab.co/products",
-      {
-        method: "GET",
-        headers,
-      }
-    );
-    let json = await response.json();
-    return json;
-  } catch (err) {
-    console.log("Error ==> ", err);
-  }
-}
-
-async function getPromiseAllProducts() {
-  let prods_response = null;
-  prods_response = await getAllProducts();
-
-  return prods_response;
 }
 
 export default producsreducer;

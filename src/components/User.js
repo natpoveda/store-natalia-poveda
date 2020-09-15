@@ -113,7 +113,7 @@ const User = () => {
             {
               <Box p="5">
                 <div className="containerCards">
-                  {_DATA.currentData().map((item) => {
+                  {_DATA.currentData().map((item,index) => {
                     return (
                       <Item
                         urlImages={item.img.url}
@@ -122,6 +122,7 @@ const User = () => {
                         date={item.createDate}
                         cost={item.cost}
                         redeem={false}
+                        key={index}
                       />
                     );
                   })}

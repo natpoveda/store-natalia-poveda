@@ -10,7 +10,7 @@ import producsreducer from "../reducers/productsReducer";
 
 const Home = () => {
   const { user } = useContext(HeaderContext);
-  const { products, setProducts } = useContext(ProductsContext);
+  const { products } = useContext(ProductsContext);
   let [select, setSelect] = useState("All");
 
   let [page, setPage] = useState(1);
@@ -19,26 +19,29 @@ const Home = () => {
   let _DATA = null;
   const PER_PAGE = 16;
 
-  if (products != null) {
-    count = Math.ceil(products.length / PER_PAGE);
-  }
-
+  console.log("PRODHOMEALL",products);
+  let prodsShow = products; 
+  let [productsHome, setproductsHome] = useState(prodsShow);
+  
+  useEffect(() => {
+    console.log("PRODHOME22",products);
+    if (products != null){
+        setproductsHome(products);
+    }  
+  }, [products]);
+  
+  
   if (user != null) {
     points = user.points;
   }
-  _DATA = usePagination(products, PER_PAGE);
 
-  const handleChange = (e, p) => {
-    setPage(p);
-    _DATA.jump(p);
-  };
-
-  const estadoItems = { changed: 0, products };
+  const estadoItems = { changed: 0, products: productsHome };
   const [state, dispatch] = useReducer(producsreducer, estadoItems);
 
   const toggle = () => {
     if (state != null) {
-      setProducts(state.products);
+        setproductsHome(state.products);
+        setSelect("All");
     }
   };
 
@@ -47,18 +50,54 @@ const Home = () => {
   }, [state]);
 
   const handleSelect = (e) => {
+    let newProducts = [];  
     const valCategory = e.target.value;
     setSelect(valCategory);
-    dispatch({ type: "orderByCategory", products, valCategory });
+    prodsShow = products; 
+
+    if (valCategory !== "All") {
+        console.log("No entiendo");
+        prodsShow.filter(function (element) {
+          let name = element.category;
+          const regex = /&/;
+          let nameCategory = name.replace(regex, "Y");
+    
+          if (nameCategory === valCategory) {
+            newProducts.push(element);
+          }
+          return newProducts;         
+        });
+    } else {
+        newProducts = prodsShow;
+        setSelect("All");
+    }
+
+    setproductsHome(newProducts);
   };
 
-  return (
+  const handleReset = () =>{
+    setproductsHome(prodsShow);
+    setSelect("All");
+  }
+
+  if (productsHome != null) {   
+    count = Math.ceil(productsHome.length / PER_PAGE);
+  }
+
+  _DATA = usePagination(productsHome, PER_PAGE);
+
+  const handleChange = (e, p) => {
+    setPage(p);
+    _DATA.jump(p);
+  };
+
+   return (
     <div className="history products">
       <div className="white-form">
         <div className="custom-form">
           <button
             className="btn active"
-            onClick={() => dispatch({ type: "orderByCost", products })}
+            onClick={() => dispatch({ type: "orderByCost", prodsShow:productsHome })}
           >
             By Cost
           </button>
@@ -70,7 +109,7 @@ const Home = () => {
             name="category"
           >
             <option className="bi-geo" value="All">
-              Todas las categorias
+              Categories
             </option>
             <option value="Phones">Phones</option>
             <option value="Gaming">Gaming</option>
@@ -83,6 +122,14 @@ const Home = () => {
             <option value="Phone Accessories">Phone Accessories</option>
             <option value="Cameras">Cameras</option>
           </select>
+
+          <button
+            className="btn active"
+            onClick={handleReset}
+          >
+           Reset
+          </button>
+
         </div>
       </div>
 

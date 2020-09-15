@@ -4,7 +4,7 @@ import producsreducer from "../reducers/productsReducer";
 import { ProductsContext } from "../contexts/contextProviderProducts";
 import { HeaderContext } from "../contexts/contextProviderHeader";
 
-const Item = ({ urlImages, category, name, cost, points, redeem, id, key }) => {
+const Item = ({ urlImages, category, name, cost, points, redeem, id }) => {
   const { setModal } = useContext(ProductsContext);
   const { user, setUser } = useContext(HeaderContext);
 
@@ -30,7 +30,7 @@ const Item = ({ urlImages, category, name, cost, points, redeem, id, key }) => {
   }, [state]);
 
   return (
-    <div className="product-card" key={`pc${key}`}>
+    <div className="product-card" >
       {redeem && (
         <div className="IconExchange">
           {cost <= points ? (
