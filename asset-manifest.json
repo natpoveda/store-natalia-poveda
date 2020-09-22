@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/store-natalia-poveda/static/css/main.46c6b8a4.chunk.css",
+    "main.css": "/store-natalia-poveda/static/css/main.8dd21d74.chunk.css",
     "main.js": "/store-natalia-poveda/static/js/main.00aeccb3.chunk.js",
     "main.js.map": "/store-natalia-poveda/static/js/main.00aeccb3.chunk.js.map",
     "runtime-main.js": "/store-natalia-poveda/static/js/runtime-main.3e3d5f10.js",
@@ -8,9 +8,9 @@
     "static/js/2.809a1203.chunk.js": "/store-natalia-poveda/static/js/2.809a1203.chunk.js",
     "static/js/2.809a1203.chunk.js.map": "/store-natalia-poveda/static/js/2.809a1203.chunk.js.map",
     "index.html": "/store-natalia-poveda/index.html",
-    "precache-manifest.ebfc67a12503de03e98d1e37a7b838ea.js": "/store-natalia-poveda/precache-manifest.ebfc67a12503de03e98d1e37a7b838ea.js",
+    "precache-manifest.d509f7e73c2c13cee17572697fe4ccad.js": "/store-natalia-poveda/precache-manifest.d509f7e73c2c13cee17572697fe4ccad.js",
     "service-worker.js": "/store-natalia-poveda/service-worker.js",
-    "static/css/main.46c6b8a4.chunk.css.map": "/store-natalia-poveda/static/css/main.46c6b8a4.chunk.css.map",
+    "static/css/main.8dd21d74.chunk.css.map": "/store-natalia-poveda/static/css/main.8dd21d74.chunk.css.map",
     "static/js/2.809a1203.chunk.js.LICENSE.txt": "/store-natalia-poveda/static/js/2.809a1203.chunk.js.LICENSE.txt",
     "static/media/index.css": "/store-natalia-poveda/static/media/coin.4669120c.svg",
     "static/media/header.png": "/store-natalia-poveda/static/media/header.68402e78.png",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.3e3d5f10.js",
     "static/js/2.809a1203.chunk.js",
-    "static/css/main.46c6b8a4.chunk.css",
+    "static/css/main.8dd21d74.chunk.css",
     "static/js/main.00aeccb3.chunk.js"
   ]
 }
